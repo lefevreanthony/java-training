@@ -1,3 +1,5 @@
+import java.util.StringJoiner;
+
 public class StringTraining {
 
     /**
@@ -6,7 +8,7 @@ public class StringTraining {
      */
     public static String helloFirstname(String firstname) {
 
-        return "Hello ";
+        return "Hello "+ firstname;
     }
 
     /**
@@ -16,7 +18,7 @@ public class StringTraining {
      */
     public static String concatArgs(String first, String second) {
 
-        return "";
+        return first + second;
     }
 
     /**
@@ -25,8 +27,11 @@ public class StringTraining {
      * @return if origin string is equal to compare string
      */
     public static boolean equals(String origin, String compare) {
-
-        return false;
+        if (origin == compare){
+            return true;
+        }else{
+            return false;
+        }
     }
 
     /**
@@ -34,17 +39,18 @@ public class StringTraining {
      * @return conversion of the character into String, ie: "t"
      */
     public static String charToString(char value) {
-
-        return "";
-    }
+        
+        return Character.toString(value) ;
+        
+        }
 
     /**
      * @param value integer, ie: 3
      * @return convertion of the integer into String, ie: "3"
      */
     public static String intToString(int value) {
-
-        return "";
+        
+        return Integer.toString(value);
     }
 
     /**
@@ -53,7 +59,7 @@ public class StringTraining {
      */
     public static int length(String string) {
 
-        return 0;
+        return string.length();
     }
 
     /**
@@ -62,7 +68,7 @@ public class StringTraining {
      */
     public static String upper(String string) {
 
-        return "";
+        return string.toUpperCase();
     }
 
     /**
@@ -71,7 +77,7 @@ public class StringTraining {
      */
     public static String lower(String string) {
 
-        return "";
+        return string.toLowerCase();
     }
 
     /**
@@ -80,7 +86,7 @@ public class StringTraining {
      */
     public static char firstChar(String string) {
 
-        return '*';
+        return string.charAt(0);
     }
 
     /**
@@ -89,7 +95,7 @@ public class StringTraining {
      */
     public static char lastChar(String string) {
 
-        return '*';
+        return string.charAt(string.length() - 1);
     }
 
     /**
@@ -101,7 +107,7 @@ public class StringTraining {
     public static String subString(String string, int begin, int end) {
         // https://howtodoinjava.com/java/string/java-string-substring-example/
 
-        return "";
+        return string.substring(begin, end);
     }
 
     /**
@@ -110,7 +116,7 @@ public class StringTraining {
      */
     public static String capitalize(String string) {
 
-        return "";
+        return string.substring(0,1).toUpperCase() + string.substring(1);
     }
 
     /**
@@ -120,7 +126,15 @@ public class StringTraining {
      */
     public static int occurrences(String string, char search) {
 
-        return 0;
+        int count = 0;
+        for (int i=0; i < string.length(); i++)
+        {
+            if (string.charAt(i) == search)
+            {
+                 count++;
+            }
+        }
+        return count;    
     }
 
     /**
@@ -131,7 +145,7 @@ public class StringTraining {
      */
     public static String replaceChar(String string, char search, char replace) {
 
-        return "";
+        return string.replace(search,replace);
     }
 
     /**
@@ -142,7 +156,7 @@ public class StringTraining {
      */
     public static String replaceString(String string, String search, String replace) {
 
-        return "";
+        return string.replace(search, replace);
     }
 
     /**
@@ -153,7 +167,7 @@ public class StringTraining {
     public static String[] split(String string, String delimiter) {
         // https://howtodoinjava.com/java/string/java-string-split-example/
 
-        return null;
+        return string.split(delimiter);
     }
 
     /**
@@ -163,7 +177,7 @@ public class StringTraining {
      */
     public static String join(String[] strings, String delimiter) {
         // https://howtodoinjava.com/java8/java-8-join-string-array-example/
-
-        return "";
+        String stringJoin = String.join(delimiter, strings);
+        return stringJoin;
     }
 }
