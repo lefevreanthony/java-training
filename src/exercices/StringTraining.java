@@ -27,11 +27,7 @@ public class StringTraining {
      * @return if origin string is equal to compare string
      */
     public static boolean equals(String origin, String compare) {
-        if (origin == compare){
-            return true;
-        }else{
-            return false;
-        }
+        return origin.equals(compare);
     }
 
     /**
