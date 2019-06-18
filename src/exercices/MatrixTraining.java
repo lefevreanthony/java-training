@@ -98,10 +98,9 @@ public class MatrixTraining {
      */
     public int sum(int[][] matrix) {
         int sum = 0 ;
-        int row = 2;
-        int column = 3;
-        for (int i = 0; i < row; i++){
-            for (int j = 0; j < column; j++){
+        
+        for (int i = 0; i < matrix.lenght; i++){
+            for (int j = 0; j < matrix[i].length; j++){
               sum = sum + matrix[i][j];
             }
         }
