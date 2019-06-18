@@ -99,7 +99,7 @@ public class MatrixTraining {
     public int sum(int[][] matrix) {
         int sum = 0 ;
         
-        for (int i = 0; i < matrix.lenght; i++){
+        for (int i = 0; i < matrix.length; i++){
             for (int j = 0; j < matrix[i].length; j++){
               sum = sum + matrix[i][j];
             }
